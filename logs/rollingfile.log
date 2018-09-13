@@ -1,1 +1,5 @@
-[INFO ] 2018-09-12 12:22:20.031 [main] GameScreen - Game Ace booting up ...
+[INFO ] 2018-09-12 22:13:04.448 [main] GameScreen - Game Ace booting up ...
+[INFO ] 2018-09-12 22:13:06.574 [JavaFX Application Thread] GameScreen - Get Card:D7
+[INFO ] 2018-09-12 22:13:07.222 [JavaFX Application Thread] GameScreen - Get Card:S2
+[INFO ] 2018-09-12 22:13:07.955 [JavaFX Application Thread] GameScreen - Get Card:SJ
+[INFO ] 2018-09-12 22:13:08.800 [JavaFX Application Thread] GameScreen - Get Card:D4

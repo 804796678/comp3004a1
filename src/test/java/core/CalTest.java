@@ -1,5 +1,7 @@
 package core;
 
+import java.awt.print.Printable;
+
 import junit.framework.TestCase;
 
 public class CalTest extends TestCase {
@@ -43,5 +45,21 @@ public class CalTest extends TestCase {
 	public void testcheckThreeCard17() {
 		CalSolver solver = new CalSolver();
 		assertEquals(1, solver.CheckAce(3,17));
+	}
+	
+	public void testgetCardcard() {
+		
+		CalSolver solver = new CalSolver();
+		System.out.printf("/nmy Jcard  : " +solver.getCard(11));
+		System.out.printf("/nmy 3card  : " +solver.getCard(3));
+	}
+	
+	public void testgetValueOfCard() {
+		CalSolver solver = new CalSolver();
+		assertEquals(10, solver.getValueOfCard(11));
+		assertEquals(2, solver.getValueOfCard(2));
+		assertEquals(10, solver.getValueOfCard(10));
+		
+		
 	}
 }
