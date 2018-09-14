@@ -51,6 +51,46 @@ public class CalSolver {
 		}
 	}
 	
+	public String Whoiwin(int ps1,int ps2,int ds1,int ds2) {
+		if(ps1 >21) {
+			return "Dealer Win";
+		}
+		else if(ps2 == 21 && ps1 == 11) {
+			if(ds2 == 21 && ds1 == 11) {
+				return "Draw";
+			}
+			else {
+				return "Player Win";
+			}
+		}
+		else if(ps1 == ps2 || ps1 <= 21) {
+			if(ds2 == 21 && ds1 == 11) {
+				return "Dealer Win";
+			}
+			else if(ds2 <= 21) {
+				if(ps1 < ds2) {return "Dealer Win";}
+				else if(ps1 > ds2) {return "Player Win";}
+				else if(ps1 == ds2) {return "Draw";}
+			}else if(ds2 > 21) {
+				if(ps1 < ds1) {return "Dealer Win";}
+				else if(ps1 > ds1) {return "Player Win";}
+				else if(ps1 == ds1) {return "Draw";}
+			}
+		}else if(ps1 != ps2 || ps2 <= 21) {
+			if(ps2 < ds2) {return "Dealer Win";}
+			else if(ps2 > ds2) {return "Player Win";}
+			else if(ps2 == ds2) {return "Draw";}
+		}else if(ps1 != ps2 || ps2 > 21) {
+			if(ps1 < ds2) {return "Dealer Win";}
+			else if(ps1 > ds2) {return "Player Win";}
+			else if(ps1 == ds2) {return "Draw";}
+			
+		}
+		return "Result did not cover this case";
+		
+		
+	}
+	
 	public String getCard(int n) {
 		String cardname = "";
 		Random rand = new Random();

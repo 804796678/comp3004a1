@@ -1,5 +1,13 @@
-[INFO ] 2018-09-12 22:13:04.448 [main] GameScreen - Game Ace booting up ...
-[INFO ] 2018-09-12 22:13:06.574 [JavaFX Application Thread] GameScreen - Get Card:D7
-[INFO ] 2018-09-12 22:13:07.222 [JavaFX Application Thread] GameScreen - Get Card:S2
-[INFO ] 2018-09-12 22:13:07.955 [JavaFX Application Thread] GameScreen - Get Card:SJ
-[INFO ] 2018-09-12 22:13:08.800 [JavaFX Application Thread] GameScreen - Get Card:D4
+[INFO ] 2018-09-13 23:29:50.162 [main] GameScreen - Game Ace booting up ...
+[INFO ] 2018-09-13 23:29:51.546 [JavaFX Application Thread] GameScreen -  Player Get Card:D4
+[INFO ] 2018-09-13 23:29:51.550 [JavaFX Application Thread] GameScreen -  Player score:  4  and  4
+[INFO ] 2018-09-13 23:29:52.037 [JavaFX Application Thread] GameScreen -  Player Get Card:H6
+[INFO ] 2018-09-13 23:29:52.038 [JavaFX Application Thread] GameScreen -  Player score:  10  and  10
+[INFO ] 2018-09-13 23:29:52.603 [JavaFX Application Thread] GameScreen -  Player Get Card:CJ
+[INFO ] 2018-09-13 23:29:52.604 [JavaFX Application Thread] GameScreen -  Player score:  20  and  20
+[INFO ] 2018-09-13 23:29:53.700 [JavaFX Application Thread] GameScreen -  Dealer Get Card:SK
+[INFO ] 2018-09-13 23:29:53.702 [JavaFX Application Thread] GameScreen -  Dealer score:  10  and  10
+[INFO ] 2018-09-13 23:29:53.712 [JavaFX Application Thread] GameScreen -  Dealer Get Card:DA
+[INFO ] 2018-09-13 23:29:53.713 [JavaFX Application Thread] GameScreen -  Dealer score:  11  and  21
+[INFO ] 2018-09-13 23:29:53.713 [JavaFX Application Thread] GameScreen -  Dealer Stand:
+[INFO ] 2018-09-13 23:29:55.764 [JavaFX Application Thread] GameScreen - Dealer Win

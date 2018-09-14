@@ -62,4 +62,89 @@ public class CalTest extends TestCase {
 		
 		
 	}
+	
+	public void testAiCard() {
+		Ai dealer = new Ai();
+		dealer.addtohandValue(3);
+		dealer.increasenumberOfCard();
+		dealer.addtohandValue(7);
+		dealer.increasenumberOfCard();
+		dealer.addtohandValue(3);
+		dealer.increasenumberOfCard();
+		dealer.addtohandValue(5);
+		dealer.increasenumberOfCard();
+		dealer.calValue();
+		
+		assertEquals(18, dealer.gethandValue1());
+	}
+	
+	public void testAiCardwith1Ace() {
+		Ai dealer = new Ai();
+		dealer.addtohandValue(1);
+		dealer.increasenumberOfCard();
+		dealer.addtohandValue(7);
+		dealer.increasenumberOfCard();
+		dealer.addtohandValue(3);
+		dealer.increasenumberOfCard();
+		dealer.addtohandValue(5);
+		dealer.increasenumberOfCard();
+		dealer.calValue();
+		
+		assertEquals(16, dealer.gethandValue1());
+		assertEquals(26, dealer.gethandValue2());
+	}
+	
+	public void testAiCardwithoneAce() {
+		Ai dealer = new Ai();
+		dealer.addtohandValue(3);
+		dealer.increasenumberOfCard();
+		dealer.addtohandValue(7);
+		dealer.increasenumberOfCard();
+		dealer.addtohandValue(1);
+		dealer.increasenumberOfCard();
+		dealer.addtohandValue(5);
+		dealer.increasenumberOfCard();
+		dealer.calValue();
+		
+		assertEquals(16, dealer.gethandValue1());
+		assertEquals(26, dealer.gethandValue2());
+	}
+	public void testAiCardString() {
+		Ai dealer = new Ai();
+		dealer.addCard("SK");
+		dealer.increasenumberOfCard();
+		dealer.addCard("SQ");
+		dealer.increasenumberOfCard();
+		dealer.addCard("SJ");
+		dealer.increasenumberOfCard();
+		int i = 0;
+		for(i = 0; i <dealer. getnumberOfCard(); i++) {
+			System.out.printf("/n my card ==" + dealer.getwhichcard(i));
+		}
+		
+	}
+	
+	public void testResult() {
+		CalSolver solver = new CalSolver();
+		Ai dealer = new Ai();
+		Ai player = new Ai();
+		player.addtohandValue(10);
+		player.increasenumberOfCard();
+		player.addtohandValue(10);
+		player.increasenumberOfCard();
+		dealer.addtohandValue(1);
+		dealer.increasenumberOfCard();
+		dealer.addtohandValue(10);
+		dealer.increasenumberOfCard();
+		dealer.calValue();
+		player.calValue();
+		assertEquals(20, player.gethandValue1());
+		assertEquals(20, player.gethandValue2());
+		assertEquals(11, dealer.gethandValue1());
+		assertEquals(21, dealer.gethandValue2());
+		String me = solver.Whoiwin(player.gethandValue1(), player.gethandValue2(), dealer.gethandValue1(), dealer.gethandValue2());
+		System.out.printf("dealer should win: " +me );
+	}
+	
+	
 }
