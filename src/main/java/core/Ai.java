@@ -38,6 +38,7 @@ public class Ai {
 			if(handValue[i] == 1 && AceinHand == 0) {
 				Value1 += 1;
 				Value2 += 11;
+				AceinHand++;
 			}
 			else {
 				Value1 += handValue[i];

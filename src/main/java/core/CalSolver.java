@@ -2,6 +2,16 @@ package core;
 
 import java.util.Random;
 
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class CalSolver {
 	public int add(int FirstCard, int SecondCard) {
 		return FirstCard + SecondCard;
@@ -52,12 +62,13 @@ public class CalSolver {
 	}
 	
 	public String Whoiwin(int ps1,int ps2,int ds1,int ds2) {
+		
 		if(ps1 >21) {
 			return "Dealer Win";
 		}
 		else if(ps2 == 21 && ps1 == 11) {
 			if(ds2 == 21 && ds1 == 11) {
-				return "Draw";
+				return "Dealer win";
 			}
 			else {
 				return "Player Win";
@@ -71,25 +82,77 @@ public class CalSolver {
 				if(ps1 < ds2) {return "Dealer Win";}
 				else if(ps1 > ds2) {return "Player Win";}
 				else if(ps1 == ds2) {return "Draw";}
-			}else if(ds2 > 21) {
+			}else if(ds2 > 21 && ds1 <= 21) {
 				if(ps1 < ds1) {return "Dealer Win";}
 				else if(ps1 > ds1) {return "Player Win";}
 				else if(ps1 == ds1) {return "Draw";}
 			}
-		}else if(ps1 != ps2 || ps2 <= 21) {
+		}if(ps1 != ps2 || ps2 <= 21) {
 			if(ps2 < ds2) {return "Dealer Win";}
 			else if(ps2 > ds2) {return "Player Win";}
 			else if(ps2 == ds2) {return "Draw";}
-		}else if(ps1 != ps2 || ps2 > 21) {
+		}if(ps1 != ps2 || ps2 > 21) {
 			if(ps1 < ds2) {return "Dealer Win";}
 			else if(ps1 > ds2) {return "Player Win";}
 			else if(ps1 == ds2) {return "Draw";}
 			
+		}if(ps1 <= 21 && (ds1>21 && ds2 > 21)) {
+			return "Player Win";
 		}
 		return "Result did not cover this case";
 		
 		
 	}
+	public int findCardValue(String card) {
+		String move = card.charAt(1)+"";
+		
+		int value = 0;
+		switch (move) {
+			case "A":
+				value = 1;
+				break;
+			case "2":
+				value = 2;
+				break;
+			case "3":
+				value = 3;
+				break;
+			case "4":
+				value = 4;
+				break;
+			case "5":
+				value = 5;
+				break;
+			case "6":
+				value = 6;
+				break;
+			case "7":
+				value = 7;
+				break;
+			case "8":
+				value = 8;
+				break;
+			case "9":
+				value = 9;
+				break;
+			case "1":
+				value = 10;
+				break;
+			case "J":
+				value = 10;
+				break;
+			case "Q":
+				value = 10;
+				break;
+			case "K":
+				value = 10;
+				break;
+			default:
+				break;
+		}
+		return value;
+	}
+	
 	
 	public String getCard(int n) {
 		String cardname = "";
@@ -159,7 +222,35 @@ public class CalSolver {
 		return cardname;
 	}
 	
+	public String readFile(String name) {
+		String lineTxt = "123";
+		try {
+			String encoding = "GBK";
+			String filePath = "src/main/resources/" + name + ".txt";
+			File file = new File(filePath);
+			
+			if (file.isFile() && file.exists()) { 
+				
+				InputStreamReader read = new InputStreamReader(new FileInputStream(file), encoding);
+				BufferedReader bufferedReader = new BufferedReader(read);
+				
+				lineTxt = bufferedReader.readLine();//only read first line
+				
+				read.close();
+			}
+		} catch (Exception e) {
+			System.out.println("wrong");
+			e.printStackTrace();
+		}
+		
+		return lineTxt;
+		
+	}
 	
+	public String[] spliteString(String line) {
+		String[] strArray = line.split("\\s");
+		return strArray;
+	}
 	
 	
 	
